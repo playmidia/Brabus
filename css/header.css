@@ -1,0 +1,136 @@
+:root{
+    --babes: "babes";
+    --aardvark: "aardvark";
+    --color-dark: #121B26;
+    --color-orange: #DF5D25;
+}
+
+@font-face{
+    font-family: "babes";
+    src: local("BebasNeue-Regular"), url(../font/BebasNeue-Regular.otf);
+}
+@font-face{
+    font-family: "aardvark";
+    src: local("AardvarkBold"), url(../font/AardvarkBold.TTF);
+}
+
+html{
+    scroll-behavior: smooth;
+}
+body{
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+.header{
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: .5s;
+}
+.nave{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-ancoras{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.nave a{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--color-dark);
+    font-size: 1.5rem;
+    font-family: var(--babes);
+}
+.menu{
+    position: absolute;
+    right: 10px;
+    height: 45px;
+    width: 45px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    z-index: 200;
+}
+.line{
+    width: 30px;
+    height: 2px;
+    background-color: var(--color-dark);
+    transition: .5s;
+}
+.line:nth-child(2){
+    margin: 8px 0;
+}
+.line-toggle{
+    position: absolute;
+    transform: rotate(225deg);
+}
+.line-toggle:nth-child(2){
+    margin: 0;
+    transform: rotate(135deg);
+}
+.container{
+    display: flex;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    margin-top: 0px;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    transform: translateX(0);
+    transition: 1s;
+    z-index: -1;
+}
+@media screen and (max-width: 800px) {
+    .menu{
+        display: flex;
+    }
+    .container-toggle{
+        transform: translateX(-90%);
+    }
+    .header-toggle{
+        transform: translate(100%);
+    }
+    .nave{
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 90vw;
+        background-color: white;
+        flex-direction: column;
+        z-index: 50;
+        transform: translateX(100%);
+        transition: 1s;
+    }
+    .nave-toggle{
+        box-shadow: 0 0 1000px black;
+        transform: translateX(0);
+    }   
+    .nav-ancoras{
+        flex-direction: column;
+        height: 60vh;
+    }
+}
+
+
+
+
